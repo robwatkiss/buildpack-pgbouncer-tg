@@ -84,6 +84,8 @@ protocol = pgsql
 accept  = /tmp/.s.PGSQL.610${n}
 connect = $DB_HOST:$DB_PORT
 retry = ${PGBOUNCER_CONNECTION_RETRY:-"no"}
+server_tls_sslmode = verify-full
+server_tls_cert_file = config/rds-cert.pem
 EOFEOF
 
   cat >> /app/vendor/pgbouncer/users.txt << EOFEOF
